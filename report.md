@@ -7,19 +7,10 @@
 ## Раздел дефектов
 В результате тестирования выявлены следующие дефекты:
 
-1. Ошибочный остаток при пополнении счёта 
+1. Ошибочный отрицательный остаток при пополнении счёта свыше 2 млрд руб
+        
+   [Ссылка на багрепорт](https://github.com/rubinov2016/netology_java_2.1/issues/1)
    
-   Ожидаемое значение остатка
-   
-   2_500_000_000
-   
-   Фактическое значение остатка
-   
-   -17_94_967_296
-   
-   [Ссылка1](https://monosnap.com/file/avKVmq0xT7Cj5KitdVlFwEgccl41Hm)
-   [Ссылка2](https://monosnap.com/file/blyyLiNHfCetbgktTw2cYPWVhtj4ei)
-
 ## Описание процесса тестирования
 В процессе тестирования использовался следующий код:
 ```java
@@ -27,7 +18,7 @@ public class Main {
  public static void main(String[] args) {
     int accountCurrentBalance;
     int transferAmount;
-    int accountFinalBalance=0;
+    int accountFinalBalance;
     accountCurrentBalance =  2_000_000_000; //(два миллиарда рублей)
     transferAmount = 500_000_000; //(пятьсот миллионов рублей)
     accountFinalBalance = accountCurrentBalance + transferAmount;
